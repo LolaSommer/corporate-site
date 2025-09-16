@@ -19,18 +19,11 @@
 body {
     padding-top: 70px;
     font-size: var(--font-size-base);
-}
-  /*контейнер упакован весь текст*/
-.page {   
-    box-sizing: border-box;
-    max-width: 1219px;
-    margin: 0 auto;
-    padding: 0 55px;
+    font-family: var(--font-family);
 }
 /*Логотип и меню с ссылками*/
 .header__inner {
     background-color: var(--green);
-    font-family: var(--font-family);
     color: var(--white);
     display: flex;
     justify-content: space-between;
@@ -56,14 +49,17 @@ body {
 /*список меню*/
 .header__nav {
     display: flex;
+    align-items: center;
     list-style: none;
-    gap: 5px;
+    gap: 12px;
     margin: 0;
     padding: 0;
 }
 
 /*ссылки меню*/
 .header__link {
+    display: block;
+    padding:8px 12px;
     color: var(--white);
     text-decoration: none;
     font-size: var(--font-size-base); 
@@ -75,13 +71,10 @@ body {
   outline: 2px solid currentColor; 
   outline-offset: 2px;
 }
-.header__nav-item::after {
-    content:"|";
-    margin: 3px 3px;
-    padding-left: 3px;
-}
-.header__nav-item:last-child::after {
-    content: none;
+.header__nav-item + .header__nav-item {
+  border-left: 2px solid rgba(255,255,255,.7);
+  padding-left: 12px;     /* отступ после палочки */
+  margin-left: 4px;       /* лёгкий воздух перед палочкой */
 }
 /*баннер с темно-зеленой картинкой*/
 .banner {
@@ -93,7 +86,6 @@ body {
     align-items: center;
     color: var(--white);
     font-size: var(--font-size-xxlarge);
-    font-family: var(--font-family);
     font-weight: var(--font-weight-medium);
     padding: 120px 55px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
@@ -106,7 +98,6 @@ body {
     color: var(--green);
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-xxlarge);
-    font-family: var(--font-family)
 }
 /*текст на сером фоне в середине страницы*/
 .problem {
@@ -117,7 +108,6 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: var(--font-size-large);
-    font-family: var(--font-family);
 }
 .problem__title {
     color: var(--green);
@@ -155,7 +145,6 @@ body {
 }
 /*сам текст о компании на голубом фоне*/
 .hero__message {
-   font-family: var(--font-family);
     font-style: italic;
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-xlarge);
@@ -169,7 +158,6 @@ body {
 .company__title {
     font-size: var(--font-size-xxlarge);
     text-align: center;
-    font-family: var(--font-family);
 }
 /*Описание на белом фоне с круглым зеленым логотипом*/
 .company {
@@ -181,7 +169,7 @@ body {
 }
 
 .company__title {
-     text-align: center;
+    text-align: center;
     margin: 0 auto 30px;
     font-size: var(--font-size-xxlarge);
     color: var(--green);
@@ -205,7 +193,6 @@ body {
     font-size: var(--font-size-large);
     line-height: 1.4;
     overflow: hidden; 
-    font-family: var(--font-family);
 }
 /*Раздел о сотрудниках с круглыми фото серый фон*/
 
@@ -219,7 +206,6 @@ body {
     margin: 0 auto 30px;
     font-size: var(--font-size-xxlarge);
     color: var(--green);
-    font-family: var(--font-family);
     font-weight: var(--font-weight-bold);
     clear: both;
 }
@@ -239,7 +225,6 @@ body {
     padding: 20px;
     text-align: center;
     background-color: var(--light-gray);
-    font-family: var(--font-family);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-normal);
     display: flex;
@@ -256,7 +241,6 @@ body {
 }
 .team__name {
     color: var(--green);
-    font-family: var(--font-family);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-bold);
 }
@@ -284,41 +268,40 @@ body {
     line-height: 1.5;
     text-align: center;
     color: var(--white);
-    font-family: var(--font-family);
 }
 @media (max-width: 768px) {
-    .header__nav {
-        display: none; 
-        flex-direction: column; 
-        background-color: var(--green);
-        position: absolute;
-        top: 70px; 
-        right: 0;
-        width: 200px; 
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    
-    .header__nav-item {
-        margin: 10px 0; 
-    }
-    
-    .menu-toggle {
-        display: block; 
-        background: none;
-        border: none;
-        color: var(--white);
-        font-size: 24px;
-        cursor: pointer;
-    }
-    
-    .menu-toggle:focus {
-        outline: 2px solid currentColor; 
-        outline-offset: 2px;
-    }
-    
-    .header__nav--active {
-        display: flex; 
-    }
+  
+  .header__nav {
+    position: fixed;
+    top: 70px;               
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: none;         
+    flex-direction: column;
+    background: var(--green);
+    z-index: 1001;          
+  }
+
+
+  .header__nav--active {    
+    display: flex;
+  }
+
+  .header__nav-item + .header__nav-item {
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    border-top: 1px solid rgba(255,255,255,.3);
+  }
+
+  
+  .header__link {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: left;
+  }
 }
 @media (max-width: 600px) {
     .banner {
