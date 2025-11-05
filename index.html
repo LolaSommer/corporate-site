@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content=" width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PiperNetHere</title>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
@@ -17,10 +17,10 @@
             <a href="#top">
                 <img class="header__logo" src="img/logo.png" alt="PiperNet logo">
             </a>
-            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
-            <ul class="header__nav">
+            <ul class="header__nav" id="primary-nav">
                 <li class="header__nav-item"><a class="header__link" href="#tr">the problem</a></li>
                 <li class="header__nav-item"><a class="header__link" href="#hum">PiedPiperCon</a></li>
                 <li class="header__nav-item"><a class="header__link" href="#people">the team</a></li>
@@ -54,9 +54,12 @@
                     <h2 class="company__title">Introducing PiedPiperCoin</h2>
                     <div class="company__content">
                     <div class="company__text">
+                      <div class="logo__contain">
                     <a href="#top">
                     <img class="company__logo" src="./img/ppclogo.png" alt="PiedPiperCoin logo">
                     </a>
+                    </div>
+                    <div class="logo__text">
                     <p class="company__paragraph">
                     Pied Piper's new internet is built for users, by users.
                     You supply the storage, compute, and networking resources that power our entire decentralized web.</p>
@@ -64,6 +67,7 @@
                     The more you share your device resources, the more PiedPiperCoin you receive.</p>
                    <p class="company__paragraph">Whether you're a developer with an app ready for market, or just an Average Joe with a smartphone you'll love all you can do with PiedPiperCoin.
                 </p>
+                </div>
                 </div>
             </div>
             </section>
@@ -112,4 +116,6 @@
                 </p>
                 </div>
               </footer>
-    </body>
+              <script src="script.js"></script>
+            </body>
+            </html>

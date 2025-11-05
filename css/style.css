@@ -9,7 +9,6 @@
     --font-size-large: 32px;
     --font-size-xlarge: 48px;
     --font-size-xxlarge: 64px;
-    --font-size-xxxlarge: 72px;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
@@ -55,7 +54,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.header__link.active{
+    border-bottom: 3px solid var(--white);
+}
 /*ссылки меню*/
 .header__link {
     display: block;
@@ -68,13 +69,12 @@ body {
     letter-spacing: 1px;
 }
 .header__link:hover {
-  outline: 2px solid currentColor; 
-  outline-offset: 2px;
+ border-bottom: 3px solid var(--white);
 }
 .header__nav-item + .header__nav-item {
   border-left: 2px solid rgba(255,255,255,.7);
-  padding-left: 12px;     /* отступ после палочки */
-  margin-left: 4px;       /* лёгкий воздух перед палочкой */
+  padding-left: 12px;     
+  margin-left: 4px;       
 }
 /*баннер с темно-зеленой картинкой*/
 .banner {
@@ -92,13 +92,6 @@ body {
 }
 
 
-/*заголовок на сером фоне:проблема*/
-.problem__title {
-    text-align: center;
-    color: var(--green);
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-xxlarge);
-}
 /*текст на сером фоне в середине страницы*/
 .problem {
     background-color: var(--light-gray);
@@ -112,6 +105,7 @@ body {
 .problem__title {
     color: var(--green);
     font-size: var(--font-size-xxlarge);
+    font-weight: var(--font-weight-bold);
     margin: 0 0 50px 0;
     text-align: center;
     width: 100%;
@@ -181,10 +175,13 @@ body {
     max-width: 800px;
 }
 .company__logo {
-    float: left;
+    float:left;
     margin: 0 30px 20px 0;
     width: 150px;
     height: auto;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+    margin: 0 1rem 1rem 0;
     
 }
 
@@ -238,7 +235,9 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--green);
+    
 }
+
 .team__name {
     color: var(--green);
     font-size: var(--font-size-base);
@@ -270,6 +269,13 @@ body {
     color: var(--white);
 }
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;        
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
   
   .header__nav {
     position: fixed;
