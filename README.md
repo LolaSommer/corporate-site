@@ -1,15 +1,16 @@
-Corporate Website
+Early training project — a simple corporate landing page built with HTML5 and CSS Grid/Flexbox.
+Served as my first hands-on experience with responsive layout and BEM methodology.
 
-Training project: corporate landing page.
-Built with HTML5, CSS (Grid, Flexbox), responsive layout.
-First experience using CSS Grid.
+🔹 Features
 
-Features:
+Header with navigation menu
 
-Site header with navigation menu
+Service card section
 
-Service card blocks
+Fully responsive for mobile and tablet
 
-Mobile/tablet responsive design
+🧰 Tech stack
 
-Tech stack: HTML5, CSS3 (Grid, Flexbox), BEM methodology.
+HTML5, CSS3 (Grid, Flexbox), BEM, base JS
+
+🕓 Archived in November 2025 — kept for reference and learning history.
